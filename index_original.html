@@ -1,0 +1,51 @@
+<!doctype html>
+<html lang="es">
+<head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Calculadora ET403</title><style>body{font:18px system-ui;max-width:700px;margin:30px auto;padding:20px}label{display:block;margin-top:16px}input,select,button{font:inherit;padding:10px}input{width:95%}button{margin-top:20px}#resultado{background:#eef3f8;padding:16px}</style></head>
+<body><h1>Calculadora ET403 · Semana 7</h1><p> suma y división .</p>
+<section aria-labelledby="titulo-calculadora">
+<h2 id="titulo-calculadora">1. Ejecutar mi versión</h2>
+<label for="a">Primer dato</label><input id="a" type="text" value="12" autocomplete="off">
+<label for="b">Segundo dato</label><input id="b" type="text" value="3" autocomplete="off">
+<label for="operacion">Operación</label>
+<select id="operacion"><option value="sumar">Sumar</option><option value="dividir">Dividir</option></select>
+<button id="calcular" type="button">Calcular</button>
+<p id="resultado" role="status" aria-live="polite">Pulse Calcular para probar.</p>
+</section>
+<script>
+"use strict";
+document.getElementById("calcular").addEventListener("click", function () {
+const textoA = document.getElementById("a").value.trim();
+const textoB = document.getElementById("b").value.trim();
+const operacion = document.getElementById("operacion").value;
+const salida = document.getElementById("resultado");
+
+// Validación 1: entrada vacía (se revisa primero, porque Number("") daría 0).
+if (textoA === "" || textoB === "") {
+salida.textContent = "Complete las dos entradas.";
+return;
+}
+
+const a = Number(textoA);
+const b = Number(textoB);
+
+// Validación 2: texto que no es número (Number("abc") da NaN).
+if (!Number.isFinite(a) || !Number.isFinite(b)) {
+salida.textContent = "Escriba números válidos en ambas entradas.";
+return;
+}
+
+// Validación 3: divisor cero, solo cuando la operación es dividir.
+if (operacion === "dividir" && b === 0) {
+salida.textContent = "No se puede dividir entre cero.";
+return;
+}
+
+if (operacion === "sumar") {
+salida.textContent = "Suma: " + (a + b);
+} else {
+salida.textContent = "División: " + (a / b);
+}
+});
+</script>
+</body>
+</html>

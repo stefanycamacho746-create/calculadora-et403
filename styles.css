@@ -1,0 +1,16 @@
+/* ===== Estilos originales (semana 7) ===== */
+body{font:18px system-ui;max-width:700px;margin:30px auto;padding:20px}
+label{display:block;margin-top:16px}
+input,select,button{font:inherit;padding:10px}
+input{width:95%}
+button{margin-top:20px}
+#resultado{background:#eef3f8;padding:16px}
+
+/* ===== Nuevo (semana 9): resultado del conversor ===== */
+#conv-resultado{background:#eef3f8;padding:16px}
+
+/* ===== Personalización (semana 9) =====
+   Paleta azul: rgb(30,64,175). Texto blanco sobre ese azul = buen contraste. */
+h1{font-size:2rem;color:rgb(30,64,175)}
+h2{color:rgb(30,64,175)}
+button{background:rgb(30,64,175);color:#fff;border:0;border-radius:6px}

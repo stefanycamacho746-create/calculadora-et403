@@ -1,0 +1,36 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Calculadora ET403</title>
+<link rel="stylesheet" href="styles.css">
+<script src="app.js" defer></script>
+</head>
+<body>
+<h1>Calculadora ET403 con conversor</h1>
+<p>Operaciones: suma y división, y conversor de unidades.</p>
+
+<!-- Calculadora original (semana 7), sin cambios de identificadores -->
+<section aria-labelledby="titulo-calculadora">
+<h2 id="titulo-calculadora">1. Ejecutar mi versión</h2>
+<label for="a">Primer dato</label><input id="a" type="text" value="12" autocomplete="off">
+<label for="b">Segundo dato</label><input id="b" type="text" value="3" autocomplete="off">
+<label for="operacion">Operación</label>
+<select id="operacion"><option value="sumar">Sumar</option><option value="dividir">Dividir</option></select>
+<button id="calcular" type="button">Calcular</button>
+<p id="resultado" role="status" aria-live="polite">Pulse Calcular para probar.</p>
+</section>
+
+<!-- NUEVO (semana 9): sección del conversor -->
+<section aria-labelledby="titulo-conversor">
+<h2 id="titulo-conversor">2. Conversor de unidades</h2>
+<label for="conv-valor">Valor a convertir</label>
+<input id="conv-valor" type="text" value="1" autocomplete="off">
+<label for="conv-tipo">Conversión</label>
+<select id="conv-tipo"></select>
+<button id="conv-calcular" type="button">Convertir</button>
+<p id="conv-resultado" role="status" aria-live="polite">Pulse Convertir para probar.</p>
+</section>
+</body>
+</html>
